@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile score",
+            "type": "shell",
+            "command": "lilypond src/score.ly; mv *.pdf pdf",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Compile parts",
+            "type": "shell",
+            "command": "lilypond src/parts.ly; mv *.pdf pdf",
+            "group": "build"
+        }
+    ]
+}
